@@ -18,28 +18,33 @@
         }
         .container {
             background-color: white;
-            padding: 30px;
+            padding: 20px;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
             max-width: 600px;
             width: 100%;
         }
-        /* Nuevo estilo para el encabezado con logo */
+        /* Estilo modificado para el encabezado */
         .header {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 15px;
             margin-bottom: 20px;
+            text-align: center;
         }
         .logo {
-            width: 300px; /* Ajusta este tamaño según necesites */
+            width: 80%; /* Ajustado para ser responsivo */
+            max-width: 300px;
             height: auto;
             object-fit: contain;
         }
         h1 {
             color: #2e7d32;
-            margin: 0; /* Quitamos el margen para mejor alineación */
+            margin: 0;
+            font-size: 1.5rem; /* Tamaño reducido para móviles */
+            text-align: center;
         }
         .input-group {
             margin-bottom: 20px;
@@ -56,10 +61,11 @@
             border: 2px solid #2e7d32;
             border-radius: 5px;
             font-size: 16px;
+            box-sizing: border-box; /* Importante para que el padding no afecte el ancho */
         }
         .results {
             background-color: #e8f5e9;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             margin-top: 20px;
         }
@@ -93,11 +99,44 @@
         button:hover {
             background-color: #1b5e20;
         }
+        
+        /* Media queries para diferentes tamaños de pantalla */
+        @media (min-width: 768px) {
+            /* Para tablets y escritorio */
+            .header {
+                flex-direction: row;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Para móviles pequeños */
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            .result-item {
+                font-size: 0.9rem;
+            }
+            .tree {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Nuevo header con logo -->
+        <!-- Header modificado para ser responsivo -->
         <div class="header">
             <img src="1.jpg" alt="Logo de la empresa" class="logo">
             <h1>CALCULADORA COMPENSACIÓN DE Co2</h1>
